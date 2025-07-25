@@ -11,12 +11,19 @@ const Header = () => {
                 <Navbar />
                 {/*    CONTENT  */}
                 <Container className="space-y-5 h-full flex flex-col justify-end">
-                    <p className={"font-helveticaNeue text-xl text-primary-foreground uppercase leading-[120%]"}>Веб-разработка / брендинг / <br/> UX / UI / стратегия</p>
-                    <h1 className={"font-helveticaNowDisplay font-bold text-[160px] text-primary-foreground uppercase leading-[100%]"}>Framo studio</h1>
+                    <p className={`font-helveticaNeue text-primary-foreground uppercase leading-[120%]
+                        text-xs md:text-base lg:text-xl  
+                    `}>Веб-разработка / брендинг / <br/> UX / UI / стратегия</p>
+                    <h1 className={`font-helveticaNowDisplay font-bold text-primary-foreground uppercase leading-[100%]
+                        text-[40px] sm:text-[60px] md:text-[80px] lg:text-[100px] 2xl:text-[160px] 
+                    `}>Framo studio</h1>
                 </Container>
             </div>
 
-            <Image src={"/images/header-bg.webp"} alt={"framo"} width={1080} height={1508} className={"absolute bottom-0 right-0 object-fit z-10 max-w-[76%] w-full h-full object-cover object-right"} />
+            <Image src={"/images/header-bg.webp"} alt={"framo"} width={1080} height={1508} className={`absolute bottom-0 right-0 object-fit z-10 h-full object-center
+                max-w-none w-full lg:max-w-[76%]
+                object-contain md:object-cover 
+                `} />
         </div>
     );
 };

@@ -11,7 +11,7 @@ const Container = ({
     return (
         <div
             className={cn(
-                'w-full px-[120px] ',
+                'w-full px-[20px] md:px-[60px] lg:px-[80px] xl:px-[120px] ',
                 className,
             )}
         >
