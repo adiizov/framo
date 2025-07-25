@@ -21,7 +21,7 @@ const interSans = Inter({
 const helvetica = localFont({
     src: [
         {
-            path: '../../public/fonts/helvetica/Helvetica.woff2',
+            path: '../../public/fonts/helvetica/Helvetica-Light.woff2',
             weight: '400',
             style: 'normal',
         },
