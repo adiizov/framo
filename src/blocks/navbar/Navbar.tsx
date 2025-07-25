@@ -6,7 +6,7 @@ import Btn from "@/components/Btn";
 
 const Navbar = () => {
     return (
-        <nav className="navbar relative z-50">
+        <nav className="navbar">
             <Container className="flex items-center justify-between">
                 <Image src={"/logo.svg"} alt="framo logo" width={160} height={64} quality={100}/>
                 <DesktopMenuList />
