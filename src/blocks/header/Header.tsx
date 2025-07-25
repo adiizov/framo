@@ -2,9 +2,11 @@ import Navbar from "@/blocks/navbar/Navbar";
 import Image from "next/image"
 import Container from "@/components/Container";
 
+
 const Header = () => {
     return (
         <div className="bg-foreground py-[100px] h-dvh relative ">
+            {/*<HeaderAnimation />*/}
             <div className="relative z-50 h-full">
                 <Navbar />
                 {/*    CONTENT  */}
