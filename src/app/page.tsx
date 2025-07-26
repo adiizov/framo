@@ -20,17 +20,19 @@ export default function Home() {
             page: Services
         },
         {
-            id:4,
+            id: 4,
             page: Price
         },
     ]
   return (
     <div>
         <Header />
-        <main>
-            <section className={"min-h-dvh py-[160px]"}>
-                {pages.map((item) => createElement(item.page, {key: item.id }))}
-            </section>
+        <main className="pt-[160px]">
+            {pages.map((item) => (
+                <section className={"min-h-dvh pb-[160px]"} key={item.id}>
+                    {createElement(item.page)}
+                </section>
+            ))}
         </main>
       </div>
   );
