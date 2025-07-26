@@ -114,6 +114,6 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-block-background text-text-primary;
+    @apply bg-block-background text-text-primary font-helveticaNeue;
   }
 }

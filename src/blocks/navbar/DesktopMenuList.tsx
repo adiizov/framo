@@ -1,4 +1,7 @@
+"use client"
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { cn } from "@/lib/utils";
 
 const list = [
     {
@@ -24,11 +27,14 @@ const list = [
 ];
 
 const DesktopMenuList = () => {
+    const pathname = usePathname()
     return (
         <ul className={"hidden 2xl:flex items-center justify-between gap-x-20"}>
             {list.map((item) => (
                 <li key={item.id}>
-                    <Link href={`/${item.url}`} className={"font-helvetica font-normal text-lg first-letter:uppercase text-foreground-muted "}>
+                    <Link href={`/${item.url}`} className={cn("font-helvetica font-normal text-lg first-letter:uppercase text-secondary/60 [&.active]:text-secondary",
+                        item.url === pathname && "text-secondary"
+                    )}>
                         {item.title}
                     </Link>
                 </li>
