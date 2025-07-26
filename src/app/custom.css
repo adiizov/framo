@@ -1,0 +1,21 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+    --color-wtf: var(--wtf),
+}
+
+:root {
+    --wtf: #d3cd58;
+}
+.dark {
+    --wtf: #d3cd58;
+}
+
+@layer base {
+    body {
+        @apply bg-wtf
+    }
+}

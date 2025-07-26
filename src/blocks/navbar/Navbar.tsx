@@ -15,7 +15,7 @@ const Navbar = () => {
                 <DesktopMenuList />
                 <Btn url={"/contact"} variant={"dark"} className={"font-helveticaNeue font-medium text-base gap-y-2 hidden 2xl:flex"}>Cвязаться <ArrowUp /></Btn>
                 <Burger>
-                    <Button size={"icon"} variant={"dark"} className={"flex 2xl:hidden"}><Menu /></Button>
+                    <Button size={"icon"} variant={"light"} className={"flex 2xl:hidden"}><Menu /></Button>
                 </Burger>
             </Container>
         </nav>
