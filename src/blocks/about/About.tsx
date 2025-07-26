@@ -25,7 +25,7 @@ const About = () => {
             <Container>
                 <div className="lg:space-y-8 mb-20">
                     <BadgeSection name={"О нас"}/>
-                    <p className={`font-medium leading-[150%] tracking-tighter lg:max-w-[70%]
+                    <p className={`text-text-primary font-medium leading-[150%] tracking-tighter lg:max-w-[70%]
                         text-xl lg:text-2xl xl:text-3xl 2xl:text-[40px] 
                     `}>
                         Студия, где дизайн — это инструмент а не украшение. Мы
@@ -38,8 +38,8 @@ const About = () => {
                 <ul className={"space-y-20"}>
                     {aboutData.map((item) => (
                         <li key={item.id} className={"block space-y-4"}>
-                            <h5 className={"font-medium text-[48px] tracking-tighter"}>{item.title}</h5>
-                            <p className={"text-xl"}>{item.subtitle}</p>
+                            <h5 className={"text-text-primary font-medium text-[48px] tracking-tighter leading-[100%]"}>{item.title}</h5>
+                            <p className={"text-text-muted text-xl"}>{item.subtitle}</p>
                         </li>
                     ))}
                 </ul>
