@@ -15,8 +15,8 @@ const PortfolioCard = ({data}: {data: PortfolioType}) => {
                 <Image src={data.image} alt={data.title} width={540} height={520} className={" w-full object-fill rounded-3xl relative z-20 blur-[2px]"} />
             </CardContent>
             <CardHeader className={"flex justify-between items-center px-0 py-8"}>
-                <CardTitle className={"font-medium text-3xl text-black"}>{data.title}</CardTitle>
-                <CardDescription className={"text-black text-xl"}>{data.service}</CardDescription>
+                <CardTitle className={"text-text-primary font-medium text-3xl "}>{data.title}</CardTitle>
+                <CardDescription className={"text-text-muted text-xl"}>{data.service}</CardDescription>
             </CardHeader>
         </Card>
     );
