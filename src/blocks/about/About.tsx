@@ -1,6 +1,5 @@
 import Container from "@/components/Container";
-import { Badge } from "@/ui/badge";
-import { Dot } from "lucide-react";
+import BadgeSection from "@/components/BadgeSection";
 
 const aboutData = [
     {
@@ -25,10 +24,7 @@ const About = () => {
         <section className="min-h-dvh py-[160px]">
             <Container>
                 <div className="lg:space-y-8 mb-20">
-                    <Badge variant={"outline"} className={"text-xs  md:text-base"}>
-                        {" "}
-                        <Dot size={32} /> О нас
-                    </Badge>
+                    <BadgeSection name={"О нас"}/>
                     <p className={`font-medium leading-[150%] tracking-tighter lg:max-w-[70%]
                         text-xl lg:text-2xl xl:text-3xl 2xl:text-[40px] 
                     `}>
