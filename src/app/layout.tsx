@@ -1,20 +1,11 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Inter } from "next/font/google";
+import {Inter } from "next/font/google";
 import localFont from 'next/font/local'
 import "./globals.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import { ReactNode } from "react";
 
 const interSans = Inter({
-  variable: "--font-inter-sans",
+  variable: "--font-inter",
   subsets: ["latin"],
 });
 
@@ -46,7 +37,7 @@ const helveticaNeue = localFont({
             style: 'italic',
         },
     ],
-    variable: "--font-helvetica-neue",
+    variable: "--font-helveticaNeue",
 })
 const helveticaNowDisplay = localFont({
     src: [
@@ -61,7 +52,7 @@ const helveticaNowDisplay = localFont({
             style: 'normal',
         },
     ],
-    variable: "--font-helvetica-now-display",
+    variable: "--font-helveticaNowDisplay",
 })
 
 export const metadata: Metadata = {
@@ -72,16 +63,16 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: ReactNode;
 }>) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${interSans.variable} 
+        className={`
+        ${interSans.variable} 
         ${helvetica.variable} 
         ${helveticaNeue.variable} 
         ${helveticaNowDisplay.variable} 
-        
         antialiased`}
       >
         {children}
