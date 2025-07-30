@@ -23,17 +23,22 @@ const helvetica = localFont({
 const helveticaNeue = localFont({
     src: [
         {
-            path: "../../public/fonts/helvetica-neue/HelveticaNeueCyr-Light.woff2",
+            path: "../../public/fonts/helvetica-neue/HelveticaNeue-Regular.woff2",
             weight: "400",
             style: "normal",
         },
         {
-            path: "../../public/fonts/helvetica-neue/HelveticaNeueCyr-Medium.woff2",
+            path: "../../public/fonts/helvetica-neue/HelveticaNeue-Light.woff2",
+            weight: "300",
+            style: "normal",
+        },
+        {
+            path: "../../public/fonts/helvetica-neue/HelveticaNeue-Medium.woff2",
             weight: "500",
             style: "normal",
         },
         {
-            path: "../../public/fonts/helvetica-neue/HelveticaNeueCyr-MediumItalic.woff2",
+            path: "../../public/fonts/helvetica-neue/HelveticaNeue-MediumItalic.woff2",
             weight: "500",
             style: "italic",
         },

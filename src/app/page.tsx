@@ -5,6 +5,7 @@ import Services from "@/blocks/services/Services";
 import { createElement } from "react";
 import Price from "@/blocks/price/Price";
 import Contact from "@/blocks/contact/Contact";
+import Footer from "@/blocks/footer/Footer";
 
 export default function Home() {
     const pages = [
@@ -39,6 +40,7 @@ export default function Home() {
                 </section>
             ))}
         </main>
+        <Footer />
       </div>
   );
 }
