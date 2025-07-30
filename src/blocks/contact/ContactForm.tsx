@@ -102,6 +102,7 @@ const ContactForm = () => {
                                         replacement={{ _: /\d/ }}
                                         placeholder="+998"
                                         type="tel"
+                                        className={"font-normal placeholder:font-normal"}
                                         {...field}
                                     />
                                 </FormControl>
