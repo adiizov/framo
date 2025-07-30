@@ -47,6 +47,8 @@
   --color-block-foreground: var(--block-foreground);
   --color-block-accent: var(--block-accent);
 
+  --color-custom-border: var(--custom-border);
+
   --color-button-background-dark: var(--button-background-dark);
   --color-button-background-light: var(--button-background-light);
   --color-button-foreground-dark: var(--button-foreground-dark);
@@ -96,6 +98,8 @@
   --block-background: oklch(1 0 89.876);
   --block-foreground: oklch(0.086 0.006 285.173);
   --block-accent: oklch(0.97 0 89.876);
+
+  --custom-border: oklch(0.928 0 89.876);
 
   --button-background-dark: oklch(1 0 89.876);
   --button-background-light: oklch(0.097 0 89.876);

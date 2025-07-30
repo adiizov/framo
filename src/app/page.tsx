@@ -4,6 +4,7 @@ import Portfolio from "@/blocks/partfolio/Portfolio";
 import Services from "@/blocks/services/Services";
 import { createElement } from "react";
 import Price from "@/blocks/price/Price";
+import Contact from "@/blocks/contact/Contact";
 
 export default function Home() {
     const pages = [
@@ -22,6 +23,10 @@ export default function Home() {
         {
             id: 4,
             page: Price
+        },
+        {
+            id: 5,
+            page: Contact
         },
     ]
   return (
