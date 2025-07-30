@@ -63,7 +63,7 @@ const ContactForm = () => {
     return (
         <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-                <div className={"flex items-center gap-x-7"}>
+                <div className={"flex flex-col sm:flex-row items-center gap-7"}>
                     <FormField
                         control={form.control}
                         name="name"
@@ -137,7 +137,7 @@ const ContactForm = () => {
                         </FormItem>
                     )}
                 />
-                <Button type="submit" value={"dark"} disabled={form.formState.isSubmitting}>
+                <Button type="submit" value={"dark"} disabled={form.formState.isSubmitting} className={"w-full sm:w-fit"}>
                     Отправить
                     {form.formState.isSubmitting ? (
                         <Loader2Icon className="animate-spin" />
