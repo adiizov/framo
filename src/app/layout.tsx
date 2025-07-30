@@ -3,6 +3,7 @@ import {Inter } from "next/font/google";
 import localFont from 'next/font/local'
 import "./globals.css";
 import { ReactNode } from "react";
+import { Toaster } from "@/ui/sonner";
 
 const interSans = Inter({
   variable: "--font-inter",
@@ -77,6 +78,7 @@ export default function RootLayout({
       >
         {children}
       </body>
+      <Toaster position={"bottom-right"} expand={true}/>
     </html>
   );
 }
