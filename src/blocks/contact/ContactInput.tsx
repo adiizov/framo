@@ -4,7 +4,7 @@ import * as React from "react";
 
 const ContactInput = ({ className, type, ...props }: React.ComponentProps<"input"> & ControllerRenderProps) => {
     return (
-        <Input placeholder="shadcn" {...props} className={`
+        <Input {...props} className={`
             aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-b-destructive
             focus-visible:ring-0
             dark:bg-transparent

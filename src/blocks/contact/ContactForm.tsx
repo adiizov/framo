@@ -18,8 +18,8 @@ import { Textarea } from "@/ui/textarea"
 
 const formSchema = z.object({
     name: z.string().min(2).max(50),
-    phone: z.string().min(2).max(50),
-    comment: z.string().min(2).max(50).optional(),
+    phone: z.string().min(2).max(50).regex(/^\+998 \d{2} \d{3} \d{2} \d{2}$/, "Номер должен быть в формате +998 XX xxx xx xx"),
+    comment: z.string().max(50).optional(),
 })
 
 const ContactForm = () => {
@@ -31,8 +31,16 @@ const ContactForm = () => {
             comment: "",
         },
     })
-    function onSubmit(values: z.infer<typeof formSchema>) {
-        console.log(values)
+    async function onSubmit(values: z.infer<typeof formSchema>) {
+        try {
+            await fetch(process.env.NEXT_PUBLIC_GOOGLE_SHEETS_ENDPOINT as string, {
+                method: "POST",
+                // headers: {"Content-Type": "application/x-www-form-urlencoded"},
+                body: JSON.stringify({ ...values, status: "активный" }),
+            })
+        } catch (e) {
+            console.error(e);
+        }
     }
     return (
         <Form {...form}>
@@ -47,7 +55,7 @@ const ContactForm = () => {
                                     Ваше имя
                                 </FormDescription>
                                 <FormControl>
-                                    <ContactInput {...field}/>
+                                    <ContactInput {...field} placeholder={"Введите ваше имя"}/>
                                 </FormControl>
                                 <FormMessage />
                             </FormItem>
@@ -56,7 +64,7 @@ const ContactForm = () => {
 
                     <FormField
                         control={form.control}
-                        name="name"
+                        name="phone"
                         render={({ field }) => (
                             <FormItem className={"gap-3 w-full"}>
                                 <FormDescription className={"text-[14px] text-text-muted"}>
@@ -79,7 +87,7 @@ const ContactForm = () => {
                 </div>
                 <FormField
                     control={form.control}
-                    name="name"
+                    name="comment"
                     render={({ field }) => (
                         <FormItem className={"gap-3 w-full"}>
                             <FormDescription className={"text-[14px] text-text-muted"}>
