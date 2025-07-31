@@ -8,7 +8,7 @@ import {
     FormControl,
     FormDescription,
     FormField,
-    FormItem,
+    FormItem, FormLabel,
     FormMessage,
 } from "@/ui/form";
 import ArrowUp from "@/assets/ArrowUp";
@@ -18,6 +18,9 @@ import { Textarea } from "@/ui/textarea";
 import { toast } from "sonner";
 import { useState } from "react";
 import { Loader2Icon } from "lucide-react";
+import { contactFormSelectData } from "@/blocks/contact/contactData";
+import { Checkbox } from "@/ui/checkbox";
+import { cn } from "@/lib/utils";
 
 const formSchema = z.object({
     name: z.string().min(2).max(50),
@@ -30,26 +33,32 @@ const formSchema = z.object({
             "Номер должен быть в формате +998 XX xxx xx xx",
         ),
     comment: z.string().max(50).optional(),
+    interest: z.array(z.string()),
 });
 
-const ContactForm = () => {
+const ContactForm = ({select=false}:{select?: boolean}) => {
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
         defaultValues: {
             name: "",
             phone: "",
             comment: "",
+            interest: [],
         },
     });
 
     async function onSubmit(values: z.infer<typeof formSchema>) {
+        const payload = {
+            ...values,
+            interest: values.interest.join(", "),
+            status: "активный"
+        };
         try {
             await fetch(
                 process.env.NEXT_PUBLIC_GOOGLE_SHEETS_ENDPOINT as string,
                 {
                     method: "POST",
-                    // headers: {"Content-Type": "application/x-www-form-urlencoded"},
-                    body: JSON.stringify({ ...values, status: "активный" }),
+                    body: JSON.stringify(payload),
                 },
             );
             toast.success("Форма отправлена");
@@ -63,6 +72,53 @@ const ContactForm = () => {
     return (
         <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+                {select && (
+                    <FormField
+                        control={form.control}
+                        name="interest"
+                        render={() => (
+                            <FormItem className={"block space-y-8 mb-[50px]"}>
+                                <FormLabel className="text-3xl text-text-muted font-normal ">Меня интересует...</FormLabel>
+                                <div className={"flex flex-wrap gap-5"}>
+                                    {contactFormSelectData.map((item) => (
+                                        <FormField
+                                            key={item.id}
+                                            control={form.control}
+                                            name="interest"
+                                            render={({ field }) => {
+                                                return (
+                                                    <FormItem
+                                                        key={item.id}
+                                                        className="w-fit"
+                                                    >
+                                                        <FormControl className={"hidden"}>
+                                                            <Checkbox
+                                                                checked={field.value?.includes(item.name)}
+                                                                onCheckedChange={(checked) => {
+                                                                    return checked
+                                                                        ? field.onChange([...field.value, item.name])
+                                                                        : field.onChange(
+                                                                            field.value?.filter(
+                                                                                (value) => value !== item.name
+                                                                            )
+                                                                        )
+                                                                }}
+                                                            />
+                                                        </FormControl>
+                                                        <FormLabel className={cn("block shrink-0 text-xl font-medium py-3 px-4 rounded-full border border-text-primary", field.value.includes(item.name) && "bg-text-primary text-text-secondary")}>
+                                                            {item.name}
+                                                        </FormLabel>
+                                                    </FormItem>
+                                                )
+                                            }}
+                                        />
+                                    ))}
+                                </div>
+                                <FormMessage />
+                            </FormItem>
+                        )}
+                    />
+                )}
                 <div className={"flex flex-col sm:flex-row items-center gap-7"}>
                     <FormField
                         control={form.control}
@@ -143,7 +199,7 @@ const ContactForm = () => {
                     {form.formState.isSubmitting ? (
                         <Loader2Icon className="animate-spin" />
                         ): (
-                        <ArrowUp color={"white"} />
+                        <ArrowUp dark />
                     )}
                 </Button>
             </form>

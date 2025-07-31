@@ -6,7 +6,7 @@ import Image from "next/image"
 
 const Header = () => {
     return (
-        <header className={"py-[80px] space-y-[130px]"}>
+        <header className={"space-y-[130px] mb-[160px]"}>
             <Navbar dark />
             <Container className={"space-y-8 lg:space-y-[60px]"}>
                 <h1 className={"text-4xl md:text-5xl lg:text-6xl xl:text-[80px] 2xl:text-[120px] leading-[100%] tracking-tighter"}>

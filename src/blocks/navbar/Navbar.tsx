@@ -6,10 +6,11 @@ import Btn from "@/components/Btn";
 import Burger from "@/blocks/burger/Burger";
 import { Button } from "@/ui/button";
 import { Menu } from "lucide-react";
+import { cn } from "@/lib/utils";
 
-const Navbar = ({dark=false}:{dark?: boolean}) => {
+const Navbar = ({dark=false, className}:{dark?: boolean, className?: string}) => {
     return (
-        <nav className="navbar ">
+        <nav className={cn("navbar py-[80px]", className)}>
             <Container className="flex items-center justify-between">
                 <Image src={`${dark ? `/logo-dark.svg`: `/logo.svg`}`} alt="framo logo" width={160} height={64} quality={100}/>
                 <DesktopMenuList dark={dark} />

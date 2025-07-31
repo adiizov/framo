@@ -19,3 +19,36 @@ export const contactData = [
 ]
 
 export type ContactType = typeof contactData[number];
+
+export const contactFormSelectData = [
+    {
+        id: 1,
+        name: "Разработка сайта"
+    },
+    {
+        id: 2,
+        name: "CRM система"
+    },
+    {
+        id: 3,
+        name: "Телеграм бот"
+    },
+    {
+        id: 4,
+        name: "Интеграция бота с чатами"
+    },
+    {
+        id: 5,
+        name: "Интернет-магазин"
+    },
+    {
+        id: 6,
+        name: "Создание логотипа"
+    },
+    {
+        id: 7,
+        name: "Разработка брендбука"
+    },
+];
+
+export type ContactFormSelectType = typeof contactFormSelectData[number];

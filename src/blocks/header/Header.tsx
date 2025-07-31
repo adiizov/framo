@@ -1,13 +1,14 @@
 import Navbar from "@/blocks/navbar/Navbar";
 import Image from "next/image"
 import Container from "@/components/Container";
+import { ReactNode } from "react";
 
 
-const Header = () => {
+const Header = ({children}: {children?: ReactNode}) => {
     return (
-        <div className="bg-block-foreground py-[80px] h-dvh relative">
+        <header className="bg-block-foreground py-[80px] h-dvh relative">
             <div className="relative z-50 h-full">
-                <Navbar />
+                <Navbar className={"p-0"}/>
                 {/*    CONTENT  */}
                 <Container className="space-y-5 h-full flex flex-col justify-end">
                     <p className={`font-helveticaNeue text-primary-foreground uppercase leading-[120%]
@@ -19,11 +20,8 @@ const Header = () => {
                 </Container>
             </div>
 
-            <Image src={"/images/header-bg.webp"} alt={"framo"} width={1080} height={1508} className={`absolute bottom-0 right-0 object-fit z-10 h-full object-center
-                max-w-none w-full lg:max-w-[76%]
-                object-contain md:object-cover 
-                `} />
-        </div>
+            <Image src={"/images/header-bg.webp"} alt={"framo"} width={1080} height={1508} className={`absolute bottom-0 right-0 object-fit z-10 h-full object-center max-w-none w-full lg:max-w-[76%] object-contain md:object-cover `} />
+        </header>
     );
 };
 
