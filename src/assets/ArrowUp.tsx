@@ -1,13 +1,13 @@
-const ArrowUp = ({color='#030303'}: {color?: string}) => {
+const ArrowUp = ({dark=false}: {dark?: boolean}) => {
     return (
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g clipPath="url(#clip0_2016_353)">
                 <path d="M2.18164 13.816L13.8166 2.18099M13.8166 2.18099H5.09039M13.8166 2.18099V10.9072"
-                      stroke={color} strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+                      stroke={dark ? "white" : "#030303"} strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
             </g>
             <defs>
                 <clipPath id="clip0_2016_353">
-                    <rect width="16" height="16" fill="white" />
+                    <rect width="16" height="16" fill={dark ? "white" : "#030303"} />
                 </clipPath>
             </defs>
         </svg>

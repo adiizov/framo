@@ -5,8 +5,7 @@ import Container from "@/components/Container";
 
 const Header = () => {
     return (
-        <div className="bg-block-foreground py-[100px] h-dvh relative">
-            {/*<HeaderAnimation />*/}
+        <div className="bg-block-foreground py-[80px] h-dvh relative">
             <div className="relative z-50 h-full">
                 <Navbar />
                 {/*    CONTENT  */}
