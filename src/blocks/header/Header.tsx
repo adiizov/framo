@@ -2,11 +2,11 @@
 import Navbar from "@/blocks/navbar/Navbar";
 import Image from "next/image"
 import Container from "@/components/Container";
-import { ReactNode, useEffect } from "react";
+import { useEffect } from "react";
 import { useAnimate } from "framer-motion";
 
 
-const Header = ({children}: {children?: ReactNode}) => {
+const Header = () => {
     const [scope, animate] = useAnimate()
 
     useEffect(() => {
