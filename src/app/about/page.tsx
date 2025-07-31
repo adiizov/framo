@@ -3,6 +3,9 @@ import Header from "@/blocks/AboutHeader/Header";
 import { createElement } from "react";
 import Footer from "@/blocks/footer/Footer";
 import Partners from "@/blocks/Partners/Partners";
+import Price from "@/blocks/price/Price";
+import Contact from "@/blocks/contact/Contact";
+import { cn } from "@/lib/utils";
 
 const Page = () => {
     const pages = [
@@ -10,13 +13,21 @@ const Page = () => {
             id: 1,
             page: Partners,
         },
+        {
+            id: 2,
+            page: Price,
+        },
+        {
+            id: 3,
+            page: Contact,
+        },
     ];
     return (
         <div>
             <Header />
-            <main className="pt-[160px]">
+            <main>
                 {pages.map((item) => (
-                    <section className={"min-h-dvh pb-[160px]"} key={item.id}>
+                    <section className={cn("min-h-dvh pb-[80px] lg:pb-[160px]", item.page === Partners && "min-h-0")} key={item.id}>
                         {createElement(item.page)}
                     </section>
                 ))}

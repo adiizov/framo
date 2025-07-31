@@ -8,14 +8,14 @@ const Header = () => {
     return (
         <header className={"py-[80px] space-y-[130px]"}>
             <Navbar dark />
-            <Container className={"space-y-[60px]"}>
-                <h1 className={"text-[120px] leading-[100%] tracking-tighter"}>
+            <Container className={"space-y-8 lg:space-y-[60px]"}>
+                <h1 className={"text-4xl md:text-5xl lg:text-6xl xl:text-[80px] 2xl:text-[120px] leading-[100%] tracking-tighter"}>
                     Мы не повторяемся <br /> — мы <em>создаём </em> новое
                 </h1>
                 <Separator />
-                <div className={"flex justify-between"}>
+                <div className={"flex flex-col lg:flex-row justify-between gap-6"}>
                     <BadgeSection name={"Делаем невозможное"} />
-                    <p className={"text-2xl leading-[150%] w-full lg:max-w-[50%]"}>
+                    <p className={"text-xl lg:text-2xl leading-[150%] w-full lg:max-w-[50%]"}>
                         Framo — это команда дизайнеров и стратегов, объединённых
                         страстью к своему делу и вниманием к деталям. Мы создаём
                         уникальные цифровые продукты, где каждый элемент
@@ -30,7 +30,7 @@ const Header = () => {
                         долгосрочные партнёрства, а не просто «сдавать макеты».
                     </p>
                 </div>
-                <Image src={"/images/about-bg.webp"} alt={"about framo"} width={1680} height={700} quality={100} />
+                <Image src={"/images/about-bg.webp"} alt={"about framo"} width={1680} height={700} quality={100} className={"w-full object-cover rounded-3xl sm:rounded-none aspect-[3/4] sm:aspect-auto"}/>
             </Container>
         </header>
     );
