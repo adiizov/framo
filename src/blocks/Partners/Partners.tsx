@@ -39,7 +39,7 @@ const partners = [
 const Partners = () => {
     return (
         <Container>
-            <h2 className={"font-medium text-4xl md:text-5xl lg:text-6xl xl:text-[80px] 2xl:text-[120px] leading-[100%] mb-20"}>Работаем с <br/> клиентами по <br/> всему миру</h2>
+            <h2 className={"title mb-20"}>Работаем с <br/> клиентами по <br/> всему миру</h2>
             <Carousel plugins={[AutoScroll()]} opts={{align:"start",  loop:true}}>
                 <CarouselContent className={"m-0 items-center "}>
                     {partners.map((item) => (

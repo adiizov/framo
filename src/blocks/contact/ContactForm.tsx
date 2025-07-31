@@ -36,7 +36,7 @@ const formSchema = z.object({
     interest: z.array(z.string()),
 });
 
-const ContactForm = ({select=false}:{select?: boolean}) => {
+const ContactForm = ({select=false, className}:{select?: boolean, className?: string}) => {
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
         defaultValues: {
@@ -71,7 +71,7 @@ const ContactForm = ({select=false}:{select?: boolean}) => {
     }
     return (
         <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+            <form onSubmit={form.handleSubmit(onSubmit)} className={cn("space-y-8", className)}>
                 {select && (
                     <FormField
                         control={form.control}
@@ -105,7 +105,7 @@ const ContactForm = ({select=false}:{select?: boolean}) => {
                                                                 }}
                                                             />
                                                         </FormControl>
-                                                        <FormLabel className={cn("block shrink-0 text-xl font-medium py-3 px-4 rounded-full border border-text-primary", field.value.includes(item.name) && "bg-text-primary text-text-secondary")}>
+                                                        <FormLabel className={cn("block shrink-0 text-base lg:text-xl font-medium py-3 px-4 rounded-full border border-text-primary", field.value.includes(item.name) && "bg-text-primary text-text-secondary")}>
                                                             {item.name}
                                                         </FormLabel>
                                                     </FormItem>

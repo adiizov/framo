@@ -10,7 +10,7 @@ import { Button } from "@/ui/button";
 
 const ContactCard = ({data}:{data: ContactType}) => {
     return (
-        <Card className={"p-8 rounded-3xl border-custom-border gap-y-8"}>
+        <Card className={"p-8 rounded-3xl border-custom-border gap-y-8 "}>
             <CardHeader className={"flex items-center gap-x-4"}>
                 <Button variant={"dark"} size={"icon"} className={"[&_svg:not([class*='size-'])]:size-8"}>
                     {createElement(data.icon)}

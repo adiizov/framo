@@ -1,7 +1,6 @@
 import Container from "@/components/Container";
 import ContactForm from "@/blocks/contact/ContactForm";
-import ContactCard from "@/blocks/contact/ContactCard";
-import { contactData } from "@/blocks/contact/contactData";
+import ContactList from "@/blocks/contact/ContactList";
 
 const Contact = () => {
     return (
@@ -11,13 +10,7 @@ const Contact = () => {
                     <h2 className={"font-medium text-3xl 2xl:text-5xl mb-12"}>Оставьте заявку</h2>
                     <ContactForm />
                 </div>
-                <ul className={"space-y-5 w-full "}>
-                    {contactData.map(item => (
-                        <li key={item.id}>
-                            <ContactCard data={item}/>
-                        </li>
-                    ))}
-                </ul>
+                <ContactList />
             </div>
         </Container>
     );

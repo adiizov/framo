@@ -121,3 +121,7 @@
     @apply bg-block-background text-text-primary font-helveticaNeue;
   }
 }
+
+.title {
+  @apply font-medium text-4xl md:text-5xl lg:text-6xl xl:text-[80px] 2xl:text-[120px] leading-[100%];
+}
