@@ -29,7 +29,7 @@ const list = [
 const DesktopMenuList = ({dark=false}:{dark: boolean}) => {
     const pathname = usePathname()
     return (
-        <ul className={"hidden 2xl:flex items-center justify-between gap-x-20"}>
+        <ul className={"hidden 2xl:flex items-center justify-between gap-x-20"} data-slot={"animate"}>
             {list.map((item) => (
                 <li key={item.id}>
                     <Link href={`${item.url}`} className={cn("font-helvetica font-normal text-lg first-letter:uppercase",
