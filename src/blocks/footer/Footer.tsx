@@ -78,7 +78,7 @@ const Footer = () => {
                 <div className={"flex justify-between flex-col lg:flex-row gap-y-16 mb-10  md:mb-[106px] pt-[70px] border-t border-text-primary/50"}>
                     <div className={"flex flex-col gap-y-2 justify-between w-fit"}>
                         <Image src={"logo-dark.svg"} alt={"framo logo"} width={156} height={62} />
-                        <Button variant={"dark"}>Cвязаться <ArrowUp color={"white"}/></Button>
+                        <Button variant={"dark"}>Cвязаться <ArrowUp dark/></Button>
                     </div>
                     <div>
                         <h4 className={"text-xs text-text-muted uppercase"}>Социальные сети</h4>

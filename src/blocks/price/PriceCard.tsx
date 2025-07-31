@@ -25,7 +25,7 @@ const PriceCard = ({data}:{data: PriceType}) => {
             <CardFooter className={"justify-between p-0"}>
                 <p className={"text-2xl font-medium"}>от <strong className={"text-5xl font-medium"}>{data.price}</strong>$</p>
                 <CardAction>
-                    <Button size={"icon"} variant={"dark"}><ArrowUp color={"white"}/></Button>
+                    <Button size={"icon"} variant={"dark"}><ArrowUp dark/></Button>
                 </CardAction>
             </CardFooter>
         </Card>
