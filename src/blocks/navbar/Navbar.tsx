@@ -2,7 +2,6 @@
 import Image from "next/image"
 import Container from "@/components/Container";
 import DesktopMenuList from '@/blocks/navbar/DesktopMenuList';
-import ArrowUp from "@/assets/ArrowUp";
 import Btn from "@/components/Btn";
 import Burger from "@/blocks/burger/Burger";
 import { Button } from "@/ui/button";
@@ -15,7 +14,7 @@ const Navbar = ({dark=false, className}:{dark?: boolean, className?: string}) =>
             <Container className="flex items-center justify-between">
                 <Image src={`${dark ? `/logo-dark.svg`: `/logo.svg`}`} alt="framo logo" width={160} height={64} quality={100} data-slot={"animate"}/>
                 <DesktopMenuList dark={dark} />
-                <Btn data-slot={"animate"} url={"/contact"} variant={dark ? "dark" : "light"} className={"font-medium text-base gap-y-2 hidden 2xl:flex transition-none "}>Cвязаться <ArrowUp dark={dark}/></Btn>
+                <Btn data-slot={"animate"} url={"/contact"} variant={dark ? "dark" : "light"} className={"font-medium text-base gap-y-2 hidden 2xl:flex transition-none "} title={"Cвязаться"}/>
                 <Burger>
                     <Button data-slot={"animate"} size={"icon"} variant={dark ? "dark" : "light"} className={"flex 2xl:hidden transition-none"}><Menu /></Button>
                 </Burger>
