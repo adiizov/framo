@@ -8,7 +8,7 @@ import {
 } from "@/ui/card";
 import { PortfolioType } from "@/blocks/partfolio/portfolioData";
 import Image from "next/image";
-import { motion, useAnimate } from "framer-motion";
+import { useAnimate } from "framer-motion";
 import { useEffect } from "react";
 
 const PortfolioCard = ({ data }: { data: PortfolioType }) => {
@@ -32,7 +32,7 @@ const PortfolioCard = ({ data }: { data: PortfolioType }) => {
             "img[data-slot='animated']",
             { filter: "blur(0px)", scale: 1.15 },
             {
-                duration: 1.7,
+                duration: 1,
                 ease: [0.72, 0, 0, 0.99],
             },
         );

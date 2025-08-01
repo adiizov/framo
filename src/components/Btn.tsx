@@ -3,7 +3,7 @@ import * as React from "react";
 import type { VariantProps } from "class-variance-authority";
 import { Button, buttonVariants } from "@/ui/button";
 import Link from "next/link";
-import { motion, useAnimate } from "framer-motion";
+import { useAnimate } from "framer-motion";
 import ArrowUp from "@/assets/ArrowUp";
 
 const Btn = ({url, title, ...props}: {url?: string, title?: string} & React.ComponentProps<'button'> &
