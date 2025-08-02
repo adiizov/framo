@@ -25,7 +25,7 @@ const Btn = ({url, title, ...props}: {url?: string, title?: string} & React.Comp
 
 
     return (
-        <Button {...props} asChild={!!url} onMouseEnter={onHover} onMouseLeave={onLeave} ref={scope} className={"transition-none"}>
+        <Button asChild={!!url} onMouseEnter={onHover} onMouseLeave={onLeave} ref={scope} className={"transition-none"} {...props} >
             {url
             ? <Link href={url}>
                 {props.children

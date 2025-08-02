@@ -3,33 +3,43 @@ import Link from "next/link";
 import { Button } from "@/ui/button";
 import Crown from "@/assets/Crown";
 import Container from "@/components/Container";
+import Btn from "@/components/Btn";
+import { useAnimate } from "framer-motion";
+import ServiceItem from "@/blocks/services/ServiceItem";
 
 const secvices = [
     {
         id: 1,
         title: "Разработка сайтов и магазинов",
         url: "#",
+        image: "/images/services/1.png"
     },
     {
         id: 2,
         title: "Редизайн и улучшение",
+        image: "/images/services/1.png"
     },
     {
         id: 3,
         title: "Разработка логотипа и брендбука",
         url: "#",
+        image: "/images/services/1.png"
     },
     {
         id: 4,
         title: "Создание Телеграм бота",
         url: "#",
+        image: "/images/services/1.png"
     },
     {
         id: 5,
         title: "СRM систем",
         url: "#",
+        image: "/images/services/1.png"
     },
 ]
+
+export type ServiceType = typeof secvices[number]
 
 const Services = () => {
     return (
@@ -38,12 +48,7 @@ const Services = () => {
             <ul className={"mt-8"}>
                 {secvices.map(item => (
                     <li key={item.id}>
-                        <Link href={item.url ?? "#"} className={"flex items-center border-b border-black/20 py-6"}>
-                            <span className={"text-text-primary font-inter font-medium text-[18px] mr-[57px]"}>{`0${item.id}`}</span>
-                            <h2 className={"text-text-muted text-2xl sm:text-3xl md:text-[40px] lg:text-[60px] xl:text-[72px] text-gray xl:leading-[90px] xl:tracking-[-4px]"}>{item.title}</h2>
-                            <div className={"flex flex-1"}></div>
-                            <Button variant={"outline"} size={"icon"} className={"size-14 [&_svg:not([class*='size-'])]:size-7"}><Crown /></Button>
-                        </Link>
+                        <ServiceItem data={item}/>
                     </li>
                 ))}
             </ul>
