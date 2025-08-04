@@ -11,9 +11,9 @@ import {
 import { Button } from "@/ui/button";
 import ArrowUp from "@/assets/ArrowUp";
 import { cn } from "@/lib/utils";
-import { Dot } from "lucide-react";
 import { useAnimate } from "framer-motion";
 import * as React from "react";
+import Btn from "@/components/Btn";
 
 const PriceCard = ({data}:{data: PriceType}) => {
     const [scope, animate] = useAnimate()
@@ -26,7 +26,7 @@ const PriceCard = ({data}:{data: PriceType}) => {
         animate("div[data-animation='ellipse-1']", {scale: 6.5}, {duration: 1, ease: [0.72, 0, 0, 0.99],})
         animate("div[data-animation='ellipse-2']", {scale: 5.9}, {duration: 1.1, ease: [0.72, 0, 0, 0.99]})
         animate("div[data-animation='icons']", {y: -36}, {duration: 1.5, ease: [0.72, 0, 0, 0.99]});
-        animate("button[data-animation='button']", {background: "#fff"}, {duration: 1, ease: [0.72, 0, 0, 0.99], delay: 0.3});
+        animate("a[data-animation='button']", {background: "#fff"}, {duration: 1, ease: [0.72, 0, 0, 0.99], delay: 0.3});
     }
     const onLeave = async () => {
         const titleColor = data.isSpecial ? "#14B8A6" : "#030303";
@@ -37,7 +37,7 @@ const PriceCard = ({data}:{data: PriceType}) => {
         animate("div[data-animation='ellipse-1']", {scale: 1}, {duration: 1.3, ease: [0.72, 0, 0, 0.99]})
         animate("div[data-animation='ellipse-2']", {scale: 1}, {duration: 1, ease: [0.72, 0, 0, 0.99],})
         animate("div[data-animation='icons']", {y: 0}, {duration: 1, ease: [0.72, 0, 0, 0.99]});
-        animate("button[data-animation='button']", {background: "#030303"}, {duration: 0.3, ease: [0.72, 0, 0, 0.99], delay: 0.4});
+        animate("a[data-animation='button']", {background: "#030303"}, {duration: 0.3, ease: [0.72, 0, 0, 0.99], delay: 0.4});
     }
 
 
@@ -53,14 +53,14 @@ const PriceCard = ({data}:{data: PriceType}) => {
             <CardFooter className={"justify-between p-0 relative z-20"}>
                 <p className={"text-2xl font-medium"} data-animation={"price"}>от <strong className={"text-5xl font-medium"}>{data.price}</strong>$</p>
                 <CardAction>
-                    <Button size={"icon"} variant={"dark"} data-animation={"button"} className={"[&_svg:not([class*='size-'])]:size-6 transition-none"} >
+                    <Btn url={data.url} size={"icon"} variant={"dark"} data-animation={"button"} className={"[&_svg:not([class*='size-'])]:size-6 transition-none"} >
                         <div className={"h-6 w-6 overflow-hidden"}>
                             <div className={"flex flex-col gap-y-3 shrink-0"} data-animation={"icons"}>
                                 <ArrowUp dark />
                                 <ArrowUp />
                             </div>
                         </div>
-                    </Button>
+                    </Btn>
                 </CardAction>
             </CardFooter>
             <div

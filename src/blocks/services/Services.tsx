@@ -11,7 +11,7 @@ const secvices = [
     {
         id: 1,
         title: "Разработка сайтов и магазинов",
-        url: "#",
+        url: "/about",
         image: "/images/services/1.png"
     },
     {
@@ -22,19 +22,19 @@ const secvices = [
     {
         id: 3,
         title: "Разработка логотипа и брендбука",
-        url: "#",
+        url: "/about",
         image: "/images/services/1.png"
     },
     {
         id: 4,
         title: "Создание Телеграм бота",
-        url: "#",
+        url: "/about",
         image: "/images/services/1.png"
     },
     {
         id: 5,
         title: "СRM систем",
-        url: "#",
+        url: "/about",
         image: "/images/services/1.png"
     },
 ]

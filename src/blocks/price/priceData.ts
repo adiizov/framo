@@ -5,6 +5,7 @@ export const priceData = [
         description: "Создание современного и адаптивного сайта под ваши цели и аудиторию",
         price: 800,
         isSpecial: false,
+        url: "/about",
     },
     {
         id: 2,
@@ -12,6 +13,7 @@ export const priceData = [
         description: "Полноценный Ecommerce-проект с UX-дизайном, корзиной, фильтрами и системой оплаты",
         price: 1500,
         isSpecial: false,
+        url: "/about",
     },
     {
         id: 3,
@@ -19,6 +21,7 @@ export const priceData = [
         description: "Уникальный логотип, отражающий суть вашего бренда. Исследование, концепты, адаптивные версии",
         price: 300,
         isSpecial: false,
+        url: "/about",
     },
     {
         id: 4,
@@ -26,6 +29,7 @@ export const priceData = [
         description: "Айдентика, сайт, логотип, телеграмм бот и фирменный стиль — полный цикл от идеи до запуска",
         price: 2000,
         isSpecial: true,
+        url: "/about",
     },
 ]
 

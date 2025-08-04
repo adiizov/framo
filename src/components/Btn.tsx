@@ -53,7 +53,7 @@ export default Btn;
 
 const AnimatedIcon = ({dark}: {dark?: boolean}) => {
     return (
-        <div className={"h-4 w-4"}>
+        <div className={"h-4 w-4 overflow-hidden"}>
             <div className={"flex flex-col gap-y-1 shrink-0"} data-animated={"icons"}>
                 <ArrowUp dark={dark}/>
                 <ArrowUp dark={dark}/>
