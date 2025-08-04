@@ -12,22 +12,27 @@ export default function Home() {
         {
             id: 1,
             page: About,
+            name: "About"
         },
         {
             id: 2,
             page: Portfolio,
+            name: "Portfolio"
         },
         {
             id: 3,
             page: Services,
+            name: "Services"
         },
         {
             id: 4,
             page: Price,
+            name: "Price"
         },
         {
             id: 5,
             page: Contact,
+            name: "Contact"
         },
     ];
     return (
@@ -35,7 +40,7 @@ export default function Home() {
             <Header />
             <main className="pt-[160px]">
                 {pages.map((item) => (
-                    <section className={"min-h-dvh pb-[160px]"} key={item.id}>
+                    <section className={"min-h-dvh pb-[160px]"} key={item.id} id={item.name}>
                         {createElement(item.page)}
                     </section>
                 ))}

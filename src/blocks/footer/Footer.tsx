@@ -1,3 +1,4 @@
+"use client"
 import Container from "@/components/Container";
 import Image from "next/image"
 import { Button } from "@/ui/button";
@@ -9,6 +10,7 @@ import { createElement } from "react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import Btn from "@/components/Btn";
+import { usePathname } from "next/navigation";
 
 const media = [
     {
@@ -49,7 +51,7 @@ const navigation = [
     {
         id: 4,
         title: "Услуги",
-        url: "services",
+        url: "#Services",
     },
     {
         id: 5,
@@ -72,6 +74,7 @@ const contacts = [
 ]
 
 const Footer = () => {
+    const pathname = usePathname()
     return (
         <footer>
             <Container>
@@ -94,7 +97,13 @@ const Footer = () => {
                         {navigation.map((item, index) => (
                             <li key={item.id} className={cn("mb-5", index === 0 && "text-xs text-text-muted uppercase mb-4")}>
                                 {index !== 0 ? (
-                                    <Link href={item.url ?? "#"} className={"text-base"}>{item.title}</Link>
+                                    <>
+                                        {item?.url?.startsWith("#") ? (
+                                            <a href={pathname === "/" ? item.url :`/${item.url}`} className={"text-base"}>{item.title}</a>
+                                            ): (
+                                            <Link href={item.url ?? "#"} className={"text-base"}>{item.title}</Link>
+                                        )}
+                                    </>
                                 ): item.title}
                             </li>
                         ))}
