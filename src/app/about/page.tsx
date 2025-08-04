@@ -2,10 +2,10 @@
 import Header from "@/blocks/AboutHeader/Header";
 import { createElement } from "react";
 import Footer from "@/blocks/footer/Footer";
-import Partners from "@/blocks/Partners/Partners";
 import Price from "@/blocks/price/Price";
 import Contact from "@/blocks/contact/Contact";
 import { cn } from "@/lib/utils";
+import Partners from "@/blocks/partners/Partners";
 
 const Page = () => {
     const pages = [
